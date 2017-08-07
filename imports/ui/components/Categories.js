@@ -10,15 +10,18 @@ class CategoriesList extends React.Component {
     return (<div className="Categories">
       <h4 className="page-header">Categories</h4>
       <ListGroup>
-        {categories.map(({ _id, name }) => {
-          return (<ListGroupItem key={_id}>
-            <Row>
-              <Col xs={3} sm={3}>
-                {name}
-              </Col>
-            </Row>
-          </ListGroupItem>);
+        <Row>
+        {categories.map(({ _id, name, image }) => {
+          return (<Col xs={3} sm={3}>
+            <ListGroupItem className="inline-block no-padding" key={_id}>
+              <img className="category-image" src={image} />
+              <p className="category-label">
+                <Label>{name}</Label>
+              </p>
+            </ListGroupItem>
+          </Col>);
         })}
+        </Row>
       </ListGroup>
     </div>);
   }

@@ -20,6 +20,10 @@ const CategoriesSchema = new SimpleSchema({
     type: String,
     label: 'The name of the category.',
   },
+  image: {
+    type: String,
+    label: 'The URL of the category\'s picture.',
+  },
 });
 
 Categories.attachSchema(CategoriesSchema);

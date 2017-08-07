@@ -105,7 +105,7 @@ class Subscription extends React.Component {
     const card = customer.card;
     return (<div className="UpdatePayment">
       <Card ref={cardForm => (this.cardForm = cardForm)} />
-      <Button bsStyle="success" onClick={this.handleUpdatePayment}>Update Payment</Button>
+      <Button bsStyle="success" onClick={this.handleUpdatePayment}>Méthode de paiement</Button>
     </div>);
   }
 
@@ -114,7 +114,7 @@ class Subscription extends React.Component {
     return (<div className="ChangePlan">
       <Plans currentPlan={customer.subscription.plan} />
       <Button bsStyle="success" onClick={this.handleChangeSubscription}>
-        {customer.subscription.status === 'cancelling' ? 'Resubscribe' : 'Change Plan'}
+        {customer.subscription.status === 'cancelling' ? 'Resubscribe' : 'Changer de plan'}
       </Button>
     </div>);
   }
@@ -126,7 +126,7 @@ class Subscription extends React.Component {
 
     return (<div className="Subscription">
       <Categories />
-      <h3>Votre abonnement</h3>
+      <h4 className="page-header">Votre abonnement</h4>
       <ListGroup>
         <ListGroupItem>
           {this.renderSubscriptionStatus()}
