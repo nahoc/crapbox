@@ -1,14 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { Jumbotron } from 'react-bootstrap';
 
 const Index = () => (
   <div className="Index">
     <Jumbotron className="text-center">
-      <h2>Base</h2>
-      <p>A starting point for Meteor applications.</p>
-      <p><a className="btn btn-success" href="https://themeteorchef.com/base" role="button">Read the Documentation</a></p>
-      <p style={ { fontSize: '16px', color: '#aaa' } }>Currently at v4.14.0</p>
+      <h2>{SITE_NAME}</h2>
+      <p>Un cadeau aléatoire, tous les mois!</p>
+      <p><Link className="btn btn-success" to="/signup" role="button">S'inscrire</Link> <Link className="btn btn-default" to="/signup" role="button">Inscrire un ami</Link></p>
     </Jumbotron>
+
+    <div>
+      <h3 className="">Comment ça fonctionne?</h3>
+    </div>
   </div>
 );
 

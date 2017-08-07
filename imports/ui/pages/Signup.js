@@ -17,8 +17,8 @@ class Signup extends React.Component {
     return (
       <div className="Signup">
         <Row>
-          <Col xs={ 12 } sm={ 8 } smOffset={ 2 } md={ 6 } mdOffset={ 3 }>
-            <h4 className="page-header">Account Information</h4>
+          <Col xs={ 12 } sm={ 8 } /*smOffset={ 2 }*/ md={ 6 } /*mdOffset={ 3 }*/>
+            <h4 className="page-header">S'abonner à {SITE_NAME}</h4>
             <form
               ref={ form => (this.signupForm = form) }
               onSubmit={ this.handleSubmit }
@@ -26,7 +26,7 @@ class Signup extends React.Component {
               <Row>
                 <Col xs={ 6 } sm={ 6 }>
                   <FormGroup>
-                    <ControlLabel>First Name</ControlLabel>
+                    <ControlLabel>Prénom</ControlLabel>
                     <input
                       type="text"
                       ref={firstName => (this.firstName = firstName)}
@@ -38,7 +38,7 @@ class Signup extends React.Component {
                 </Col>
                 <Col xs={ 6 } sm={ 6 }>
                   <FormGroup>
-                    <ControlLabel>Last Name</ControlLabel>
+                    <ControlLabel>Nom de famille</ControlLabel>
                     <input
                       type="text"
                       ref={lastName => (this.lastName = lastName)}
@@ -50,7 +50,7 @@ class Signup extends React.Component {
                 </Col>
               </Row>
               <FormGroup>
-                <ControlLabel>Email Address</ControlLabel>
+                <ControlLabel>Adresse courriel</ControlLabel>
                 <input
                   type="email"
                   ref={emailAddress => (this.emailAddress = emailAddress)}
@@ -60,7 +60,7 @@ class Signup extends React.Component {
                 />
               </FormGroup>
               <FormGroup>
-                <ControlLabel>Password</ControlLabel>
+                <ControlLabel>Mot de passe</ControlLabel>
                 <input
                   type="password"
                   ref={password => (this.password = password)}
@@ -69,11 +69,11 @@ class Signup extends React.Component {
                   className="form-control"
                 />
               </FormGroup>
-              <h4 className="page-header">Payment Information</h4>
+              <h4 className="page-header">Paiement</h4>
               <Row>
                 <Col xs={ 12 }>
                   <Alert bsStyle="info">
-                    <strong>Select a plan size</strong>. When you sign up, your subscription will begin after a free one day trial (renewed monthly). Cancel anytime.
+                    <strong>Veuillez choisir un abonnement</strong>. Les colis surprises sont envoyés le 15 de chaque mois. Possibilité d'annuler en tout temps.
                   </Alert>
                   <Plans />
                 </Col>
@@ -83,10 +83,11 @@ class Signup extends React.Component {
                   <Card ref={card => (this.card = card)} />
                 </Col>
               </Row>
-              <Button type="submit" bsStyle="success" block>Sign Up</Button>
+              <Button type="submit" bsStyle="success" block>S'abonner!</Button>
             </form>
           </Col>
         </Row>
+        <div className="half-page background-signup"></div>
       </div>
     );
   }

@@ -8,6 +8,7 @@ import { _ } from 'meteor/underscore';
 import { Bert } from 'meteor/themeteorchef:bert';
 import Customers from '../../api/customers/customers';
 import Invoices from '../components/Invoices';
+import Categories from '../components/Categories';
 import Plans from '../components/Plans';
 import Card from '../components/Card';
 import PlansCollection from '../../api/plans/plans';
@@ -90,12 +91,12 @@ class Subscription extends React.Component {
     const message = {
       active: {
         style: 'success',
-        text: <p>Your subscription is <strong>active</strong> and <strong>will renew on {subscription.current_period_end}</strong>. <a className="cancel-link" href="#" onClick={this.handleCancelSubscription}>Cancel Subscription</a></p>,
+        text: <p>Votre abonnement est <strong>actif</strong> et <strong>sera renouvelé le {subscription.current_period_end}</strong>. <a className="cancel-link" href="#" onClick={this.handleCancelSubscription}>Cancel Subscription</a></p>,
       },
-      cancelling: { style: 'warning', text: <p>Your subscription <strong>will end on {subscription.current_period_end}</strong>.</p> },
-      canceled: { style: 'danger', text: <p>Your subscription ended on {subscription.current_period_end}.</p> },
-      none: { style: 'info', text: <p>You don't have a plan. Shucks! <a href="#" onClick={this.handleSubscribe}>Subscribe now</a>.</p> },
-      trialing: { style: 'success', text: <p>You're trialing until {subscription.current_period_end}! <a className="cancel-link" href="#" onClick={this.handleCancelSubscription}>Cancel Subscription</a></p> },
+      cancelling: { style: 'warning', text: <p>Votre abonnement <strong>e terminera le {subscription.current_period_end}</strong>.</p> },
+      canceled: { style: 'danger', text: <p>Votre abonnement s'est terminé le {subscription.current_period_end}.</p> },
+      none: { style: 'info', text: <p>Vous n'êtes toujours pas abonné? <a href="#" onClick={this.handleSubscribe}>Abonnez-vous dès maintenant!</a></p> },
+      trialing: { style: 'success', text: <p>Vous êtes en période d'essai jusqu'au {subscription.current_period_end}! <a className="cancel-link" href="#" onClick={this.handleCancelSubscription}>Annuler mon abonnement</a></p> },
     }[subscription.status];
     return (<Alert bsStyle={message.style}>{message.text}</Alert>);
   }
@@ -125,6 +126,8 @@ class Subscription extends React.Component {
     const isCancelling = subscription.status === 'cancelling' ? `until ${subscription.current_period_end}` : '';
 
     return (<div className="Subscription">
+      <Categories />
+      <h3>Votre abonnement</h3>
       <ListGroup>
         <ListGroupItem>
           {this.renderSubscriptionStatus()}

@@ -23,7 +23,7 @@ if (!Meteor.isProduction) {
   });
 }
 
-const plans = [{
+const plans = [/*{
   planId: 'large',
   label: 'Large (20 documents)',
   price: 2000,
@@ -31,14 +31,14 @@ const plans = [{
   planId: 'medium',
   label: 'Medium (15 documents)',
   price: 1500,
-}, {
-  planId: 'small',
-  label: 'Small (10 documents)',
+}, */{
+  planId: '10dollars',
+  label: 'Abonnement à 10 dollars',
   price: 1000,
 }, {
-  planId: 'tiny',
-  label: 'Tiny (5 documents)',
-  price: 500,
+  planId: '20dollars',
+  label: 'Abonnement à 20 dollars',
+  price: 2000,
 }];
 
 plans.forEach(({ planId, label, price }) => {

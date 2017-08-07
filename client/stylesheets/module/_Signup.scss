@@ -13,3 +13,19 @@
 .Signup .Card {
   margin-bottom: 20px;
 }
+
+.Signup .background-signup {
+  background-image: url('images/background-signup.jpg');
+}
+
+.Signup .half-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: -1;
+  width: 40%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

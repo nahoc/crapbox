@@ -37,8 +37,8 @@ const signup = () => {
             if (loginError) {
               Bert.alert(loginError.reason, 'danger');
             } else {
-              Bert.alert('Welcome to Doxie!', 'success');
-              browserHistory.push('/documents');
+              Bert.alert('Bienvenue sur BoxBuzz!', 'success');
+              browserHistory.push('/subscription');
             }
           });
         }
