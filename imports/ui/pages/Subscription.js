@@ -18,7 +18,6 @@ class Subscription extends React.Component {
   constructor(props) {
     super(props);
     this.state = { changingPlan: false, updatingPayment: false };
-
     this.handleChangeSubscription = this.handleChangeSubscription.bind(this);
     this.handleCancelSubscription = this.handleCancelSubscription.bind(this);
     this.handleUpdatePayment = this.handleUpdatePayment.bind(this);

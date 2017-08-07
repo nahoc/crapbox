@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Accounts } from 'meteor/accounts-base';
 import Plans from '../../api/plans/plans';
+import Categories from '../../api/categories/categories';
 
 if (!Meteor.isProduction) {
   const users = [{
@@ -23,15 +24,9 @@ if (!Meteor.isProduction) {
   });
 }
 
-const plans = [/*{
-  planId: 'large',
-  label: 'Large (20 documents)',
-  price: 2000,
-}, {
-  planId: 'medium',
-  label: 'Medium (15 documents)',
-  price: 1500,
-}, */{
+
+// Plans
+const plans = [{
   planId: '10dollars',
   label: 'Abonnement à 10 dollars',
   price: 1000,
@@ -44,4 +39,16 @@ const plans = [/*{
 plans.forEach(({ planId, label, price }) => {
   const planExists = Plans.findOne({ planId });
   if (!planExists) Plans.insert({ planId, label, price });
+});
+
+// Categories
+const categories = [{
+  name: 'Électronique',
+}, {
+  name: 'Livres',
+}];
+
+categories.forEach(({ name }) => {
+  const categoryExist = Categories.findOne({ name });
+  if (!categoryExist) Categories.insert({ name });
 });

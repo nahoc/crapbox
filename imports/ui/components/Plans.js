@@ -7,7 +7,7 @@ import centsToDollars from '../../modules/cents-to-dollars';
 class PlansList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { plan: props.currentPlan || 'small' };
+    this.state = { plan: props.currentPlan || '10dollars' };
   }
 
   render() {

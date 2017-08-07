@@ -2,29 +2,19 @@ import React, { PropTypes } from 'react';
 import { composeWithTracker } from 'react-komposer';
 import { ListGroup, ListGroupItem, Row, Col, Label } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
-import Invoices from '../../api/invoices/invoices';
-import { epochToHuman } from '../../modules/dates';
-import centsToDollars from '../../modules/cents-to-dollars';
+import Categories from '../../api/categories/categories';
 
-class InvoicesList extends React.Component {
+class CategoriesList extends React.Component {
   render() {
-    const { invoices } = this.props;
-    return (<div className="Invoices">
-      <h4 className="page-header">Catégories</h4>
+    const { categories } = this.props;
+    return (<div className="Categories">
+      <h4 className="page-header">Categories</h4>
       <ListGroup>
-        {invoices.map(({ _id, paid, date, total }) => {
+        {categories.map(({ _id, name }) => {
           return (<ListGroupItem key={_id}>
             <Row>
-              <Col xs={2} sm={2}>
-                {paid ?
-                <Label bsStyle="success">Paid</Label> :
-                <Label bsStyle="danger">Due</Label>}
-              </Col>
-              <Col xs={7} sm={7}>
-                {epochToHuman(date)}
-              </Col>
-              <Col xs={3} sm={3} className="text-right">
-                {centsToDollars(total)}
+              <Col xs={3} sm={3}>
+                {name}
               </Col>
             </Row>
           </ListGroupItem>);
@@ -34,16 +24,16 @@ class InvoicesList extends React.Component {
   }
 }
 
-InvoicesList.propTypes = {
-  invoices: PropTypes.array,
+CategoriesList.propTypes = {
+  categories: PropTypes.array,
 };
 
 const composer = (props, onData) => {
-  const subscription = Meteor.subscribe('customer.invoices');
+  const subscription = Meteor.subscribe('categories');
   if (subscription.ready()) {
-    const invoices = Invoices.find().fetch();
-    onData(null, { invoices });
+    const categories = Categories.find().fetch();
+    onData(null, { categories });
   }
 };
 
-export default composeWithTracker(composer)(InvoicesList);
+export default composeWithTracker(composer)(CategoriesList);

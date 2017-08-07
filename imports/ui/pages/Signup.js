@@ -31,7 +31,7 @@ class Signup extends React.Component {
                       type="text"
                       ref={firstName => (this.firstName = firstName)}
                       name="firstName"
-                      placeholder="First Name"
+                      placeholder="Prénom"
                       className="form-control"
                     />
                   </FormGroup>
@@ -43,7 +43,7 @@ class Signup extends React.Component {
                       type="text"
                       ref={lastName => (this.lastName = lastName)}
                       name="lastName"
-                      placeholder="Last Name"
+                      placeholder="Nom de famille"
                       className="form-control"
                     />
                   </FormGroup>
@@ -55,7 +55,7 @@ class Signup extends React.Component {
                   type="email"
                   ref={emailAddress => (this.emailAddress = emailAddress)}
                   name="emailAddress"
-                  placeholder="Email Address"
+                  placeholder="Adresse courriel"
                   className="form-control"
                 />
               </FormGroup>
@@ -65,7 +65,7 @@ class Signup extends React.Component {
                   type="password"
                   ref={password => (this.password = password)}
                   name="password"
-                  placeholder="Password"
+                  placeholder="Most de passe"
                   className="form-control"
                 />
               </FormGroup>
