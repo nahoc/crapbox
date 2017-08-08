@@ -5,13 +5,13 @@ const Customers = new Mongo.Collection('Customers');
 
 Customers.allow({
   insert: () => false,
-  update: () => false,
+  update: () => true,
   remove: () => false,
 });
 
 Customers.deny({
   insert: () => true,
-  update: () => true,
+  update: () => false,
   remove: () => true,
 });
 
@@ -23,6 +23,18 @@ const CustomersSchema = new SimpleSchema({
   customerId: {
     type: String,
     label: 'The user\'s customer ID on Stripe.',
+  },
+  'categories.electronic': {
+    type: String,
+    label: 'Electronic category for the customer.',
+  },
+  'categories.books': {
+    type: String,
+    label: 'Books category for the customer.',
+  },
+  'categories.clothes': {
+    type: String,
+    label: 'Clothes category for the customer.',
   },
   'card.brand': {
     type: String,

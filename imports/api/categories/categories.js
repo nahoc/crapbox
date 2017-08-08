@@ -16,6 +16,10 @@ Categories.deny({
 });
 
 const CategoriesSchema = new SimpleSchema({
+  slug: {
+    type: String,
+    label: 'The slug of the category.',
+  },
   name: {
     type: String,
     label: 'The name of the category.',

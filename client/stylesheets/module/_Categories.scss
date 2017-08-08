@@ -1,0 +1,22 @@
+.Categories {
+  .list-group-item {
+    padding: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .true {
+    border: 8px solid #98EEFF;
+  }
+
+  .false {
+    border: 8px solid #ffffff;
+  }
+
+  .label {
+    font-size: 100%;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+}

@@ -43,14 +43,20 @@ plans.forEach(({ planId, label, price }) => {
 
 // Categories
 const categories = [{
+  slug: 'electronic',
   name: 'Électronique',
   image: 'images/electronic.jpeg',
 }, {
+  slug: 'books',
   name: 'Livres',
   image: 'images/books.jpeg',
+}, {
+  slug: 'clothes',
+  name: 'Vêtements',
+  image: 'images/clothes.jpg',
 }];
 
-categories.forEach(({ name, image }) => {
+categories.forEach(({ name, image, slug }) => {
   const categoryExist = Categories.findOne({ name });
-  if (!categoryExist) Categories.insert({ name, image });
+  if (!categoryExist) Categories.insert({ name, image, slug });
 });
