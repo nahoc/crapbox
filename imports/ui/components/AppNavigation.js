@@ -10,7 +10,7 @@ const AppNavigation = ({ hasUser }) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/">{ SITE_NAME }</Link>
+        <Link to="/"><img className="pull-left logo" src="images/logo.svg" alt="{ SITE_NAME } logo" height="32" />&nbsp; { SITE_NAME }</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
