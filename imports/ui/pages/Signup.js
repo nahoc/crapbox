@@ -4,9 +4,41 @@ import Plans from '../components/Plans';
 import Card from '../components/Card';
 import handleSignup from '../../modules/signup';
 
+function newScript(src) {
+  return new Promise(function(resolve, reject){
+    var script = document.createElement('script');
+    script.src = src;
+    script.addEventListener('load', function () {
+      resolve();
+    });
+    script.addEventListener('error', function (e) {
+      reject(e);
+    });
+    document.body.appendChild(script);
+  })
+};
+
+const myScript = newScript('http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false&key=AIzaSyDGT-UBzrvOXcxAZkd_d0ihIC-Uhcejc_s');
+
 class Signup extends React.Component {
   componentDidMount() {
     handleSignup({ component: this });
+    const self = this;
+    myScript.then(function() {
+      self.setState({ 'status': 'done' });
+      const options = {
+        componentRestrictions: { country: 'ca' }
+      };
+      const input = document.getElementById('where');
+      const autocomplete = new google.maps.places.Autocomplete(input, options);
+      google.maps.event.addDomListener(input, 'keydown', function(event) { 
+        if (event.keyCode === 13) { 
+          event.preventDefault(); 
+        }
+      }); 
+    }).catch(function() {
+      self.setState({'status': 'error'});
+    })
   }
 
   handleSubmit(event) {
@@ -15,9 +47,10 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="Signup">
+    <div className="Signup">
+      <div className="container">
         <Row>
-          <Col xs={ 12 } sm={ 8 } /*smOffset={ 2 }*/ md={ 6 } /*mdOffset={ 3 }*/>
+          <Col className="float-center" xs={ 12 } sm={ 8 } /*smOffset={ 2 }*/ md={ 8 } /*mdOffset={ 3 }*/>
             <h4 className="page-header">S'abonner à {SITE_NAME}</h4>
             <form
               ref={ form => (this.signupForm = form) }
@@ -49,6 +82,8 @@ class Signup extends React.Component {
                   </FormGroup>
                 </Col>
               </Row>
+              <Row>
+              <Col xs={ 6 } sm={ 6 }>
               <FormGroup>
                 <ControlLabel>Adresse courriel</ControlLabel>
                 <input
@@ -59,6 +94,10 @@ class Signup extends React.Component {
                   className="form-control"
                 />
               </FormGroup>
+              </Col>
+              </Row>
+              <Row>
+              <Col xs={ 6 } sm={ 6 }>
               <FormGroup>
                 <ControlLabel>Mot de passe</ControlLabel>
                 <input
@@ -69,6 +108,57 @@ class Signup extends React.Component {
                   className="form-control"
                 />
               </FormGroup>
+              </Col>
+              </Row>
+              <h4 className="page-header">Adresse de paiement</h4>
+              <FormGroup>
+                <ControlLabel>Adresse</ControlLabel>
+                <input
+                  id="where"
+                  name="where"
+                  className="form-control"
+                  placeholder="Adresse"
+                />
+              </FormGroup>
+              <Row>
+              <Col xs={ 4 } sm={ 4 }>
+              <FormGroup>
+                <ControlLabel>Appartement</ControlLabel>
+                <input
+                  type="text"
+                  id="apartment"
+                  name="apartment"
+                  className="form-control"
+                  placeholder="S'il y a lieu"
+                />
+              </FormGroup>
+              </Col>
+              <Col xs={ 4 } sm={ 4 }>
+              <FormGroup>
+                <ControlLabel>Code postal</ControlLabel>
+                <input
+                  type="text"
+                  pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+                  id="postalCode"
+                  name="postalCode"
+                  className="form-control"
+                  placeholder="X1X 1X1"
+                />
+              </FormGroup>
+              </Col>
+              <Col xs={ 4 } sm={ 4 }>
+              <FormGroup>
+                <ControlLabel>Téléphone</ControlLabel>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="form-control"
+                  placeholder="(555) 555-5555"
+                />
+              </FormGroup>
+              </Col>
+              </Row>
               <h4 className="page-header">Paiement</h4>
               <Row>
                 <Col xs={ 12 }>
@@ -87,6 +177,7 @@ class Signup extends React.Component {
             </form>
           </Col>
         </Row>
+        </div>
         <div className="half-page background-signup"></div>
       </div>
     );

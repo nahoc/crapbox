@@ -1,5 +1,10 @@
-.Signup {
-  margin-bottom: 40px;
+.Signup .container {
+  padding-top: 68px;
+  padding-bottom: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 67%;
 }
 
 .Signup form + p {
@@ -10,21 +15,26 @@
   margin-bottom: 20px;
 }
 
+.Signup .float-center {
+  float: none;
+  margin: auto;
+}
+
 .Signup .Card {
   margin-bottom: 20px;
 }
 
 .Signup .background-signup {
-  background-image: url('images/background-signup.jpg');
+  background-image: url('images/background-signup.png');
 }
 
 .Signup .half-page {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   height: 100vh;
   z-index: -1;
-  width: 40%;
+  width: 33%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
