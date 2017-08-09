@@ -5,13 +5,13 @@ const Customers = new Mongo.Collection('Customers');
 
 Customers.allow({
   insert: () => false,
-  update: () => false,
+  update: () => true,
   remove: () => false,
 });
 
 Customers.deny({
   insert: () => true,
-  update: () => true,
+  update: () => false,
   remove: () => true,
 });
 
@@ -23,6 +23,54 @@ const CustomersSchema = new SimpleSchema({
   customerId: {
     type: String,
     label: 'The user\'s customer ID on Stripe.',
+  },
+  'categories.electronics': {
+    type: String,
+    label: 'Electronics category for the customer.',
+  },
+  'categories.books': {
+    type: String,
+    label: 'Books category for the customer.',
+  },
+  'categories.clothes': {
+    type: String,
+    label: 'Clothes category for the customer.',
+  },
+  'categories.music': {
+    type: String,
+    label: 'Music category for the customer.',
+  },
+  'categories.movies': {
+    type: String,
+    label: 'Movies category for the customer.',
+  },
+  'categories.home': {
+    type: String,
+    label: 'Home category for the customer.',
+  },
+  'categories.tools': {
+    type: String,
+    label: 'Tools category for the customer.',
+  },
+  'categories.beauty': {
+    type: String,
+    label: 'Beauty category for the customer.',
+  },
+  'categories.toys': {
+    type: String,
+    label: 'Toys category for the customer.',
+  },
+  'categories.boardGames': {
+    type: String,
+    label: 'Board games category for the customer.',
+  },
+  'categories.videoGames': {
+    type: String,
+    label: 'Video games category for the customer.',
+  },
+  'categories.random': {
+    type: String,
+    label: 'Random category for the customer.',
   },
   'card.brand': {
     type: String,

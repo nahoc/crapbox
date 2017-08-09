@@ -1,19 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { Jumbotron } from 'react-bootstrap';
+import Stripes from '../components/Stripes';
+import Intro from '../components/Intro';
+import AppIllustrations from '../components/AppIllustrations';
+import Primary from '../components/Primary';
+import Secondary from '../components/Secondary';
+import Footer from '../components/Footer';
 
-const Index = () => (
-  <div className="Index">
-    <Jumbotron className="text-center">
-      <h2>{SITE_NAME}</h2>
-      <p>Un cadeau aléatoire, tous les mois!</p>
-      <p><Link className="btn btn-success" to="/signup" role="button">S'inscrire</Link> <Link className="btn btn-default" to="/signup" role="button">Inscrire un ami</Link></p>
-    </Jumbotron>
-
-    <div>
-      <h3 className="">Comment ça fonctionne?</h3>
+class Index extends React.Component {
+  render() {
+    return (
+    <div className="globalContent">
+    <main>
+      <header>
+        <Stripes/>
+        <Intro/>
+      </header>
+      <AppIllustrations/>
+      <Primary/>
+      <Secondary/>
+    </main>
+    <Footer/>
     </div>
-  </div>
-);
+    );
+  }
+}
 
 export default Index;

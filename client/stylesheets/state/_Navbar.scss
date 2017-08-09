@@ -1,6 +1,28 @@
-.navbar-default .navbar-nav > li > a.active,
-.navbar-default .navbar-nav > li > a.active:focus,
-.navbar-default .navbar-nav > li > a.active:hover {
+.navbar-default .navbar-nav>li>a.active,
+.navbar-default .navbar-nav>li>a.active:focus,
+.navbar-default .navbar-nav>li>a.active:hover {
   color: #555;
   background-color: #e7e7e7;
+}
+
+.navbar {
+  margin-bottom: 0!important;
+  position: absolute!important;
+  top: 0!important;
+  left: 0;
+  right: 0;
+  height: 50px!important;
+  z-index: 9999999!important;
+  background-color: transparent!important;
+  border: 0!important;
+  a {
+    color: #ffffff!important;
+  }
+}
+
+.logo {
+  height: 32px;
+  float: left;
+  margin-top: -6px;
+  margin-right: 2px;
 }

@@ -6,4 +6,6 @@ import '../../api/documents/server/publications';
 
 import '../../api/plans/server/publications';
 
+import '../../api/categories/server/publications';
+
 import '../../api/public';

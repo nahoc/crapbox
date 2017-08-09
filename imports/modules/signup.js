@@ -67,18 +67,18 @@ const validate = () => {
     },
     messages: {
       firstName: {
-        required: 'First name?',
+        required: 'Veuillez entrer votre prénom.',
       },
       lastName: {
-        required: 'Last name?',
+        required: 'Veuillez entrer votre nom de famille',
       },
       emailAddress: {
-        required: 'Need an email address here.',
-        email: 'Is this email address legit?',
+        required: 'Veuillez entrer une adresse courriel.',
+        email: 'Cette adresse courriel n\'est pas valide.',
       },
       password: {
-        required: 'Need a password here.',
-        minlength: 'Use at least six characters, please.',
+        required: 'Veuillez entrer un mote de passe.',
+        minlength: 'Votre mot de passe doit contenir au moins 6 caractères.',
       },
     },
     submitHandler() { signup(); },

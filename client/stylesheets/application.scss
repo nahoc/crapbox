@@ -1,7 +1,7 @@
 @import "base/extends";
 @import "base/animations";
 @import "base/forms";
-
+@import "base/videos";
 @import "module/Loading";
 @import "module/Login";
 @import "module/PageHeader";
@@ -9,5 +9,10 @@
 @import "module/Plans";
 @import "module/Card";
 @import "module/Subscription";
-
+@import "module/Categories";
+@import "module/Stripes";
+@import "module/Intro";
+@import "module/AppIllustrations";
+@import "module/Primary";
+@import "module/Secondary";
 @import "state/Navbar";
