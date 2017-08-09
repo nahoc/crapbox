@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "description": "An app made by Nahoc.",
   "engines": {
-    "node": "6.7.0",
-    "npm": "3.10.3"
+    "node": "6.7.x",
+    "npm": "3.10.x"
   },
   "scripts": {
     "start": "meteor --settings settings-development.json",
