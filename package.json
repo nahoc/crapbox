@@ -1,7 +1,11 @@
 {
-  "name": "application-name",
-  "version": "1.0.0",
-  "description": "Application description.",
+  "name": "boxbuzz",
+  "version": "1.0.1",
+  "description": "An app made by Nahoc.",
+  "engines": {
+    "node": "6.7.0",
+    "npm": "3.10.3"
+  },
   "scripts": {
     "start": "meteor --settings settings-development.json",
     "test": "meteor test --driver-package practicalmeteor:mocha --port 5000",
