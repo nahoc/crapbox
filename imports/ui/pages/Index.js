@@ -1,19 +1,34 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { composeWithTracker } from 'react-komposer';
+import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { Jumbotron } from 'react-bootstrap';
+import Stripes from '../components/Stripes';
+import Intro from '../components/Intro';
+import AppIllustrations from '../components/AppIllustrations';
+import Primary from '../components/Primary';
+import Secondary from '../components/Secondary';
 
-const Index = () => (
-  <div className="Index">
-    <Jumbotron className="text-center">
-      <h2>{SITE_NAME}</h2>
-      <p>Un cadeau aléatoire, tous les mois!</p>
-      <p><Link className="btn btn-success" to="/signup" role="button">S'inscrire</Link> <Link className="btn btn-default" to="/signup" role="button">Inscrire un ami</Link></p>
-    </Jumbotron>
+class Index extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    <div>
-      <h3 className="">Comment ça fonctionne?</h3>
-    </div>
-  </div>
-);
+  render() {
+    return (
+    <div className="globalContent">
+    <main>
+      <header>
+        <Stripes/>
+        <Intro/>
+      </header>
+      <AppIllustrations/>
+      <Primary/>
+      <Secondary/>
+    </main>
+    </div>);
+  }
+}
 
 export default Index;
