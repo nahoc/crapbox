@@ -1,19 +1,18 @@
 import React from 'react';
-import { Alert, ListGroup, ListGroupItem, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 const Intro = () => (
   <section id="intro">
-      <div className="container-lg">
+      <div className="container">
           <a className="announcement" href="/blog/hong-kong">
-            <span className="new-pill">New</span>
+            <span className="new-pill">Nouveau</span>
             <span className="message">
-                Stripe in Hong Kong + Alipay and WeChat Pay globally.
+                Nous livrons maintenant à travers tout le Québec!
             </span>
           </a>
 
         <h1>
-          The new standard in online payments
+          Un cadeau surprise, tous les mois!
         </h1>
         <p className="common-BodyText">
           Stripe is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.

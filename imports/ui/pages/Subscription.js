@@ -124,7 +124,7 @@ class Subscription extends React.Component {
     const { customer } = this.props;
     const isCancelling = subscription.status === 'cancelling' ? `until ${subscription.current_period_end}` : '';
 
-    return (<div className="Subscription">
+    return (<div className="Subscription container">
       <Categories />
       <h4 className="page-header">Votre abonnement</h4>
       <ListGroup>

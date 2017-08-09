@@ -43,7 +43,7 @@ plans.forEach(({ planId, label, price }) => {
 
 // Categories
 const categories = [{
-  slug: 'electronic',
+  slug: 'electronics',
   name: 'Électronique',
   image: 'images/electronic.jpeg',
 }, {
@@ -54,6 +54,42 @@ const categories = [{
   slug: 'clothes',
   name: 'Vêtements',
   image: 'images/clothes.jpg',
+}, {
+  slug: 'music',
+  name: 'Musique',
+  image: 'images/music.jpg',
+}, {
+  slug: 'movies',
+  name: 'Films',
+  image: 'images/movies.jpg',
+}, {
+  slug: 'home',
+  name: 'Maison',
+  image: 'images/home.jpg',
+}, {
+  slug: 'videoGames',
+  name: 'Jeux vidéos',
+  image: 'images/video-games.jpg',
+}, {
+  slug: 'tools',
+  name: 'Outils',
+  image: 'images/tools.jpg',
+}, {
+  slug: 'beauty',
+  name: 'Beauté',
+  image: 'images/beauty.jpg',
+}, {
+  slug: 'toys',
+  name: 'Jouets',
+  image: 'images/toys.jpg',
+}, {
+  slug: 'boardGames',
+  name: 'Jeux',
+  image: 'images/board-games.jpg',
+}, {
+  slug: 'random',
+  name: 'Suprise!',
+  image: 'images/random.jpg',
 }];
 
 categories.forEach(({ name, image, slug }) => {

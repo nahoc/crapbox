@@ -1,20 +1,12 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import { composeWithTracker } from 'react-komposer';
-import { Meteor } from 'meteor/meteor';
-import { _ } from 'meteor/underscore';
-import { Jumbotron } from 'react-bootstrap';
+import React from 'react';
 import Stripes from '../components/Stripes';
 import Intro from '../components/Intro';
 import AppIllustrations from '../components/AppIllustrations';
 import Primary from '../components/Primary';
 import Secondary from '../components/Secondary';
+import Footer from '../components/Footer';
 
 class Index extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
     <div className="globalContent">
@@ -27,7 +19,9 @@ class Index extends React.Component {
       <Primary/>
       <Secondary/>
     </main>
-    </div>);
+    <Footer/>
+    </div>
+    );
   }
 }
 

@@ -2,7 +2,12 @@ import React from 'react';
 
 const Primary = () => (
 <section id="primary">
-    <section id="complete-toolkit" className="container-lg">
+    <section id="complete-toolkit" className="container">
+      <div className="video-position">
+      <div className="video-container">
+        <iframe src="https://www.youtube.com/embed/yRWY9UogMJA" frameBorder="0" width="560" height="315"></iframe>
+      </div>
+      </div>
       <h2 className="common-UppercaseTitle">
         <svg className="heading-icon">
           <circle fill="#B9F4BC" cx="33" cy="33" r="33"/>
@@ -17,14 +22,14 @@ const Primary = () => (
           </g>
         </svg>
         <span>
-          The complete toolkit for internet business
+          Vous aimez les bonnes surprises?
         </span>
       </h2>
       <p className="common-BodyText">
-        Stripe builds the most powerful and flexible tools for internet commerce. Whether you’re creating a subscription service, an on-demand marketplace, an e-commerce store, or a crowdfunding platform, Stripe’s meticulously-designed APIs and unmatched functionality help you create the best possible product for your users. Hundreds of thousands of the world’s most innovative technology companies are scaling faster and more efficiently by building their businesses on Stripe.
+        Avec { SITE_NAME }, vous choisissez le montant que vous voulez investir chaque mois et on s'occupe de choisir un cadeau pour vous! Lorsque vous créer votre compte, il est possible de choisir les catégories de produits qui vous intéressent le plus ou bien de faire 100% confiance au hasard.
       </p>
       <a className="common-BodyText common-Link common-Link--arrow" href="/customers">
-        Discover how businesses use Stripe
+        Découvrez comment nos services fonctionnent
       </a>
     </section>
 
@@ -38,54 +43,13 @@ const Primary = () => (
           <path d="M21.6 26.8L19 25l-1.3 1 1.4 3c0 .2-.3.4-.5.6l-3-.8-1 1.4 2.4 2.3-.4.8-3.2.3-.3 1.6 3 1.4v.8l-3 1.4.4 1.6 3.2.3c0 .3.2.5.3.8l-2.4 2.3.8 1.4 3-.8.7.6-1.3 3 1.3 1 2.6-1.8c.3 0 .5.3.8.4l-.3 3.2 1.6.6 2-2.7c.2 0 .5 0 .7.2l1 3h1.5l1-3c0-.2.4-.2.7-.3l2 2.7 1.4-.6-.4-3.2c.3 0 .5-.3.8-.4L37 49l1.3-1-1.4-3c0-.2.3-.4.5-.6l3 .8 1-1.4-2.4-2.3.4-.8 3.2-.3.3-1.6-3-1.4v-.8l3-1.4-.4-1.6-3.2-.3c0-.3-.2-.5-.3-.8l2.4-2.3-.8-1.4-3 .8-.7-.6 1.3-3-1.3-1-2.6 1.8c-.3 0-.5-.3-.8-.4l.3-3.2-1.6-.6-2 2.7c-.2 0-.5 0-.7-.2l-1-3h-1.5l-1 3c0 .2-.4.2-.7.3l-2-2.7-1.4.6.4 3.2c-.3 0-.5.3-.8.4z" fill="#1BB978"/>
           <circle fill="#B9F4BC" cx="28" cy="37" r="3"/>
         </svg>
-        Developers first
+        Notre garanti
       </h2>
       <p className="common-BodyText">
-        We believe that payments is a problem rooted in code, not finance. We obsessively seek out elegant, composable abstractions that enable robust, scalable, flexible integrations. Because we eliminate needless complexity and extraneous details, you can get up and running with Stripe in just a couple of minutes.
+        Nous sommes un entreprise Québecoise qui a à coeur votre satisfaction. C'est pourquoi ne nous vous enverrons que des produits neufs et de qualité. Il est possible pour vous d'annuler votre abonnement en tout temps et nous sommes toujours disponibles pour répondre à vos questions par courriel.
       </p>
-      <section id="notebook" className="container-lg">
-        <nav>
-          <select>
-            <option value="payments">Payments</option>
-            <option value="customers">Customers</option>
-            <option value="subscriptions">Subscriptions</option>
-            <option value="reporting">Reporting</option>
-          </select>
-          <span id="api-method-selection"></span>
-          <ul>
-            <li>
-              <button className="common-BodyText common-Link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14"><path fill="#6772E5" fill-rule="evenodd" d="M0 3a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3zm0 1h13v2H0V4z"/></svg>
-                Payments
-              </button>
-                          </li>
-            <li>
-              <button className="common-BodyText common-Link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14"><path fill="#6772E5" d="M12.5 11.75c0-1.24-2.69-2.25-6-2.25s-6 1-6 2.25c0 .46.37.9 1.01 1.25h9.98c.64-.36 1.01-.79 1.01-1.25zM6.5 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                Customers
-              </button>
-                          </li>
-            <li>
-              <button className="common-BodyText common-Link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14"><path fill="#6772E5" d="M6.3 6.3l1.4 1.4L11.5 4 7.7.3 6.3 1.7 7.58 3H6.5a5.5 5.5 0 1 0 5.48 5H9.96A3.5 3.5 0 1 1 6.5 5h1.09l-1.3 1.3z"/></svg>
-                Subscriptions
-              </button>
-                        </li>
-            <li>
-              <button className="common-BodyText common-Link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14"><path fill="#6772E5" d="M0 6.5c0-.27.22-.5.5-.5h2c.28 0 .5.23.5.5v6a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-6zm5-5c0-.28.22-.5.5-.5h2c.28 0 .5.23.5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11zm5 2.01a.5.5 0 0 1 .5-.51h2c.28 0 .5.23.5.51v8.98a.5.5 0 0 1-.5.51h-2a.5.5 0 0 1-.5-.51V3.51z"/></svg>
-                Reporting
-              </button>
-            </li>
-          </ul>
-          <a href="/docs/api" className="common-BodyText common-Link common-Link--arrow">
-            Full API reference
-          </a>
-        </nav>
-        <div id="editor">
-          <pre><span className="custom-line-numbers"></span><code className="language-javascript"></code></pre>
-        </div>
-      </section>
+      <br/>
+      <br/>
     </section>
   </section>
 );

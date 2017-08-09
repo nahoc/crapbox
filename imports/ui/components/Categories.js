@@ -43,11 +43,12 @@ class CategoriesList extends React.Component {
     return (<div className="Categories">
       <h4 className="page-header">Categories</h4>
       <ListGroup>
-        <Row>
+        <Row className="container-fluid row-eq-height">
         {categories.map(({ name, image, slug }) => {
-          return (<Col xs={3} sm={3}>
+          return (<Col className="col" xs={3} sm={2}>
             <ListGroupItem className={this.props} key={slug}>
               <div className={checkCategory(slug)}>
+                <div className="selectedBorder"></div>
                 <img onClick={() => setCategory(slug)} className="category-image" src={image} />
                 <p className="category-label">
                   <Label>{name}</Label>

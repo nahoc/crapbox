@@ -37,14 +37,14 @@ main header {
   }
 }
 
-#intro .container-lg {
+#intro .container {
   padding-top: 70px;
   padding-bottom: 100px;
   margin: 0 auto;
 }
 
 @media (min-width:670px) {
-  #intro .container-lg {
+  #intro .container {
     margin-top: -7%;
     padding-top: 0;
     padding-bottom: 0

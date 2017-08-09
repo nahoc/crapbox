@@ -24,9 +24,9 @@ const CustomersSchema = new SimpleSchema({
     type: String,
     label: 'The user\'s customer ID on Stripe.',
   },
-  'categories.electronic': {
+  'categories.electronics': {
     type: String,
-    label: 'Electronic category for the customer.',
+    label: 'Electronics category for the customer.',
   },
   'categories.books': {
     type: String,
@@ -35,6 +35,42 @@ const CustomersSchema = new SimpleSchema({
   'categories.clothes': {
     type: String,
     label: 'Clothes category for the customer.',
+  },
+  'categories.music': {
+    type: String,
+    label: 'Music category for the customer.',
+  },
+  'categories.movies': {
+    type: String,
+    label: 'Movies category for the customer.',
+  },
+  'categories.home': {
+    type: String,
+    label: 'Home category for the customer.',
+  },
+  'categories.tools': {
+    type: String,
+    label: 'Tools category for the customer.',
+  },
+  'categories.beauty': {
+    type: String,
+    label: 'Beauty category for the customer.',
+  },
+  'categories.toys': {
+    type: String,
+    label: 'Toys category for the customer.',
+  },
+  'categories.boardGames': {
+    type: String,
+    label: 'Board games category for the customer.',
+  },
+  'categories.videoGames': {
+    type: String,
+    label: 'Video games category for the customer.',
+  },
+  'categories.random': {
+    type: String,
+    label: 'Random category for the customer.',
   },
   'card.brand': {
     type: String,

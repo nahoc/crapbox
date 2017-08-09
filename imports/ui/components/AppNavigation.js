@@ -8,9 +8,9 @@ const renderNavigation = hasUser => (hasUser ? <AuthenticatedNavigation /> : <Pu
 
 const AppNavigation = ({ hasUser }) => (
   <Navbar>
-    <Navbar.Header className="container-lg">
+    <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/">{SITE_NAME}</Link>
+        <Link to="/">{ SITE_NAME }</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>

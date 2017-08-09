@@ -59,7 +59,7 @@ const handleSignup = (options, promise) => {
           userId,
           customerId: customer.id,
           card: { brand: customer.card.brand, last4: customer.card.last4 },
-          categories: { electronic: 'true', books: 'true', clothes: 'true' },
+          categories: { electronics: 'true', books: 'true', clothes: 'true', music: 'true', movies: 'true', home: 'true', tools: 'true', beauty: 'true', toys: 'true', random: 'true', boardGames: 'true', videoGames: 'true' },
           subscription: { id, status, plan: items.data[0].plan.id, current_period_end },
         });
         action.resolve();
