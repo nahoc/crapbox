@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPhoneInput from 'react-phone-input';
 import { Row, Col, FormGroup, ControlLabel, Button, Alert } from 'react-bootstrap';
 import Plans from '../components/Plans';
 import Card from '../components/Card';
@@ -33,6 +34,7 @@ class Signup extends React.Component {
     myScript.then(function() {
       self.setState({ 'status': 'done' });
       const options = {
+        types: ['address'],
         componentRestrictions: { country: 'ca' }
       };
       const input = document.getElementById('where');
@@ -41,7 +43,22 @@ class Signup extends React.Component {
         if (event.keyCode === 13) { 
           event.preventDefault(); 
         }
-      }); 
+      });
+      google.maps.event.addDomListener(autocomplete, 'place_changed', function() {
+
+    var place = autocomplete.getPlace();
+    for (var i = 0; i < place.address_components.length; i++) {
+
+      for (var j = 0; j < place.address_components[i].types.length; j++) {
+
+        if (place.address_components[i].types[j] == "postal_code") {
+
+          document.getElementById('postalCode').value = place.address_components[i].long_name;
+
+        }
+      }
+    }
+  }); 
     }).catch(function() {
       self.setState({'status': 'error'});
     })
@@ -127,7 +144,7 @@ class Signup extends React.Component {
               <Row>
               <Col xs={ 4 } sm={ 4 }>
               <FormGroup>
-                <ControlLabel>Appartement</ControlLabel>
+                <ControlLabel>Appartement #</ControlLabel>
                 <input
                   type="text"
                   id="apartment"
@@ -142,7 +159,7 @@ class Signup extends React.Component {
                 <ControlLabel>Code postal</ControlLabel>
                 <input
                   type="text"
-                  pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+                  //pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
                   id="postalCode"
                   name="postalCode"
                   className="form-control"
@@ -153,13 +170,7 @@ class Signup extends React.Component {
               <Col xs={ 4 } sm={ 4 }>
               <FormGroup>
                 <ControlLabel>Téléphone</ControlLabel>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="form-control"
-                  placeholder="(555) 555-5555"
-                />
+                  <ReactPhoneInput  className="form-control" id="phone" defaultCountry={'ca'} onlyCountries={['ca']} />
               </FormGroup>
               </Col>
               </Row>
