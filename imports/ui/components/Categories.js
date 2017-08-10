@@ -45,7 +45,7 @@ class CategoriesList extends React.Component {
       <ListGroup>
         <Row className="container-fluid row-eq-height">
         {categories.map(({ name, image, slug }) => {
-          return (<Col className="col" xs={3} sm={2}>
+          return (<Col className="col" xs={6} sm={4} md={3} lg={2}>
             <ListGroupItem className={this.props} key={slug}>
               <div className={checkCategory(slug)}>
                 <div className="selectedBorder"></div>

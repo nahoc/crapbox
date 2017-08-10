@@ -15,16 +15,21 @@ const userName = () => {
 const AuthenticatedNavigation = () => (
   <div>
     <Nav>
+      <LinkContainer to="/subscription">
+        <NavItem eventKey={ 2 } href="/subscription">Abonnement</NavItem>
+      </LinkContainer>
+    </Nav>
+    <Nav>
       <LinkContainer to="/documents">
-        <NavItem eventKey={ 2 } href="/documents">Documents</NavItem>
+        <NavItem eventKey={ 3 } href="/categories">Catégories</NavItem>
       </LinkContainer>
     </Nav>
     <Nav pullRight>
-      <NavDropdown eventKey={ 3 } title={ userName() } id="basic-nav-dropdown">
+      <NavDropdown eventKey={ 4 } title={ userName() } id="basic-nav-dropdown">
         <LinkContainer to="/subscription">
-          <MenuItem eventKey={ 3.1 } href="/subscription">Manage Subscription</MenuItem>
+          <MenuItem eventKey={ 4.1 } href="/profile">Mon compte</MenuItem>
         </LinkContainer>
-        <MenuItem eventKey={ 3.2 } onClick={ handleLogout }>Logout</MenuItem>
+        <MenuItem eventKey={ 4.2 } onClick={ handleLogout }>Logout</MenuItem>
       </NavDropdown>
     </Nav>
   </div>

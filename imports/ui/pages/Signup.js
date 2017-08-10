@@ -21,6 +21,12 @@ function newScript(src) {
 const myScript = newScript('http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false&key=AIzaSyDGT-UBzrvOXcxAZkd_d0ihIC-Uhcejc_s');
 
 class Signup extends React.Component {
+
+  componentWillMount() {
+    // classe pour faire la navigation d'une autre couleur'
+    document.body.classList.add('bodySignup');
+  }
+
   componentDidMount() {
     handleSignup({ component: this });
     const self = this;
@@ -95,8 +101,6 @@ class Signup extends React.Component {
                 />
               </FormGroup>
               </Col>
-              </Row>
-              <Row>
               <Col xs={ 6 } sm={ 6 }>
               <FormGroup>
                 <ControlLabel>Mot de passe</ControlLabel>

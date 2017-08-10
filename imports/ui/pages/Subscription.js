@@ -26,6 +26,11 @@ class Subscription extends React.Component {
     this.renderChangePlan = this.renderChangePlan.bind(this);
     this.renderUpdatePayment = this.renderUpdatePayment.bind(this);
   }
+  
+  componentWillMount() {
+    // classe pour faire la navigation d'une autre couleur'
+    document.body.classList.add('bodySub');
+  }
 
   handleChangeSubscription(event) {
     event.preventDefault();
@@ -90,7 +95,7 @@ class Subscription extends React.Component {
     const message = {
       active: {
         style: 'success',
-        text: <p>Votre abonnement est <strong>actif</strong> et <strong>sera renouvelé le {subscription.current_period_end}</strong>. <a className="cancel-link" href="#" onClick={this.handleCancelSubscription}>Cancel Subscription</a></p>,
+        text: <p>Votre abonnement est <strong>actif</strong> et <strong>sera renouvelé le {subscription.current_period_end}</strong>. <a className="cancel-link" href="#" onClick={this.handleCancelSubscription}>Annuler mon abonnement</a></p>,
       },
       cancelling: { style: 'warning', text: <p>Votre abonnement <strong>e terminera le {subscription.current_period_end}</strong>.</p> },
       canceled: { style: 'danger', text: <p>Votre abonnement s'est terminé le {subscription.current_period_end}.</p> },
@@ -137,14 +142,14 @@ class Subscription extends React.Component {
               <p><strong>Plan</strong></p>
             </Col>
             <Col xs={12} sm={6} md={7}>
-              <p>You're subscribed to the <strong>{subscription.plan.label}</strong> plan {isCancelling}</p>
+              <p>Vous êtes abonné au plan <strong>{subscription.plan.label}</strong> {isCancelling}</p>
             </Col>
             <Col xs={12} sm={3} md={2}>
               <Button
                 onClick={() => { this.setState({ changingPlan: !this.state.changingPlan }); }}
                 bsStyle="default"
                 block
-              >{this.state.changingPlan ? 'Cancel' : 'Change Plan'}</Button>
+              >{this.state.changingPlan ? 'Annuler' : 'Changer de plan'}</Button>
             </Col>
           </Row>
           {this.state.changingPlan ? this.renderChangePlan() : ''}
@@ -152,17 +157,17 @@ class Subscription extends React.Component {
         <ListGroupItem>
           <Row>
             <Col xs={12} sm={3} md={3}>
-              <p><strong>Payment Method</strong></p>
+              <p><strong>Méthode de paiement</strong></p>
             </Col>
             <Col xs={12} sm={6} md={7}>
-              <p><strong>{customer.card.brand}</strong> ending in <strong>{customer.card.last4}</strong></p>
+              <p><strong>{customer.card.brand}</strong> finissant par <strong>{customer.card.last4}</strong></p>
             </Col>
             <Col xs={12} sm={3} md={2}>
               <Button
                 onClick={() => { this.setState({ updatingPayment: !this.state.updatingPayment }); }}
                 bsStyle="default"
                 block
-              >{this.state.updatingPayment ? 'Cancel' : 'Update Payment'}</Button>
+              >{this.state.updatingPayment ? 'Annuler' : 'Mettre à jour'}</Button>
             </Col>
           </Row>
           {this.state.updatingPayment ? this.renderUpdatePayment() : ''}

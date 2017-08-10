@@ -7,6 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import App from '../../ui/layouts/App.js';
 import Documents from '../../ui/pages/Documents.js';
 import NewDocument from '../../ui/pages/NewDocument.js';
+import Categories from '../../ui/pages/Categories.js';
 import EditDocument from '../../ui/containers/EditDocument.js';
 import ViewDocument from '../../ui/containers/ViewDocument.js';
 import Index from '../../ui/pages/Index.js';
@@ -39,6 +40,7 @@ Meteor.startup(() => {
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />
         <Route name="signup" path="/signup" component={ Signup } />
+        <Route name="categories" path="/categories" component={ Categories } />
         <Route name="subscription" path="/subscription" component={ Subscription } />
         <Route path="*" component={ NotFound } />
       </Route>

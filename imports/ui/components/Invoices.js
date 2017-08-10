@@ -9,16 +9,18 @@ import centsToDollars from '../../modules/cents-to-dollars';
 class InvoicesList extends React.Component {
   render() {
     const { invoices } = this.props;
-    return (<div className="Invoices">
-      <h4 className="page-header">Invoices</h4>
+
+    if(invoices.length > 0) { 
+      return (<div className="Invoices">
+      <h4 className="page-header">Factures</h4>
       <ListGroup>
         {invoices.map(({ _id, paid, date, total }) => {
           return (<ListGroupItem key={_id}>
             <Row>
               <Col xs={2} sm={2}>
                 {paid ?
-                <Label bsStyle="success">Paid</Label> :
-                <Label bsStyle="danger">Due</Label>}
+                <Label bsStyle="success">Payé</Label> :
+                <Label bsStyle="danger">Dû</Label>}
               </Col>
               <Col xs={7} sm={7}>
                 {epochToHuman(date)}
@@ -31,6 +33,12 @@ class InvoicesList extends React.Component {
         })}
       </ListGroup>
     </div>);
+    } else {
+      return (<div className="Invoices">
+      <h4 className="page-header">Factures</h4>
+      <p>Aucune facture à afficher.</p>
+    </div>);
+    }
   }
 }
 

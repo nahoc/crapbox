@@ -7,6 +7,10 @@ import Secondary from '../components/Secondary';
 import Footer from '../components/Footer';
 
 class Index extends React.Component {
+  componentWillMount() {
+    document.body.classList.remove('bodySub','bodyLogin','bodySignup','bodyRecover');
+  }
+
   render() {
     return (
     <div className="globalContent">
